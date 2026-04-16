@@ -35,7 +35,8 @@ const upload = multer({
   storage,
   limits: { fileSize: 500 * 1024 * 1024 } // 500MB limit
 });
-
+// Serve frontend
+app.use(express.static(__dirname));
 // Serve static video files
 app.use('/videos', express.static(videosDir));
 
